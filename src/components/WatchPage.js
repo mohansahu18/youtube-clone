@@ -10,7 +10,7 @@ import WatchVideoDetailsContainer from './WatchVideoDetailsContainer'
 
 const WatchPage = () => {
     const [SearchParams] = useSearchParams()
-    console.log(SearchParams.get('v'));
+    // console.log(SearchParams.get('v'));
 
     const dispatch = useDispatch()
     useEffect(() => {

@@ -13,12 +13,12 @@ const WatchVideoDetailsContainer = ({ videoId }) => {
 
     useEffect(() => {
         getVideoDetails()
-        console.log("wvcd jjjjj");
+        // console.log("wvcd jjjjj");
     }, [videoId])
     const getVideoDetails = async () => {
         const data = await fetch(YOUTUBE_VIDEO_DETAILS_API + videoId)
         const json = await data.json();
-        console.log(json);
+        // console.log(json);
         setVideoDetails(json.items[0])
     }
 
@@ -31,7 +31,7 @@ const WatchVideoDetailsContainer = ({ videoId }) => {
         const data = await fetch(YOUTUBE_CHANNEL_DETAILS_API + videoDetails?.snippet?.channelId);
         const json = await data.json();
         setChannelDetails(json.items[0]);
-        console.log(json);
+        // console.log(json);
     };
 
     // early return

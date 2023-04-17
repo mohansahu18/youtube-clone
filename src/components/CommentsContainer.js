@@ -6,14 +6,14 @@ const CommentsContainer = ({ videoId }) => {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        console.log("API CALL COMMENTS" + videoId);
+        // console.log("API CALL COMMENTS" + videoId);
         getCommentDetails()
     }, [videoId])
 
     const getCommentDetails = async () => {
         const data = await fetch(YOUTUBE_COMMENTS_API + videoId)
         const json = await data.json()
-        console.log(json);
+        // console.log(json);
         setComments(json.items)
     }
 

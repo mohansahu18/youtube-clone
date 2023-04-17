@@ -6,7 +6,7 @@ const SuggestionVideoContainer = ({ videoId }) => {
     const [relatedVideo, setRelatedVideo] = useState([])
 
     useEffect(() => {
-        console.log("API CALL");
+        // console.log("API CALL");
         getRelatedVideo()
     }, [])
 
@@ -14,7 +14,7 @@ const SuggestionVideoContainer = ({ videoId }) => {
         const data = await fetch(RELATED_VIDEO_API + videoId);
         const json = await data.json();
         setRelatedVideo(json.items)
-        console.log(json.items);
+        // console.log(json.items);
     }
     if (!relatedVideo || relatedVideo.length === 0) {
         return null

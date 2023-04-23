@@ -74,22 +74,25 @@ const Head = () => {
                 </Link>
             </div>
             <div>
-                <div className=' flex border' >
-                    <input placeholder='search'
-                        type='text'
-                        className='w-28 px-2 h-5 border border-gray-800 sm:w-64 sm:h-6 md:w-96 md:h-8  rounded-l-full'
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        onFocus={() => setShowSuggestion(true)}
-                        onBlur={() => setTimeout(() => setShowSuggestion(false), 200)}
-                        ref={inputRef}
-                    />
-                    <Link to={`/result?search_query=${searchQuery}`}>
-                        <button onClick={() => handleSumbit()} className='  bg-gray-300 align-baseline w-6 h-5 sm:h-6 sm:w-12 md:w-16 md:h-8 border border-gray-800 rounded-r-full'>
-                            <AiOutlineSearch className='m-auto h-4 sm:h-7 sm:w-7 ' />
-                        </button>
-                    </Link>
-                </div>
+                <form>
+                    <div className=' flex border' >
+                        <input placeholder='search'
+                            type='text'
+                            className='w-28 px-2 h-5 border border-gray-800 sm:w-64 sm:h-6 md:w-96 md:h-8  rounded-l-full'
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onFocus={() => setShowSuggestion(true)}
+                            onBlur={() => setTimeout(() => setShowSuggestion(false), 200)}
+                            ref={inputRef}
+                        />
+                        <Link to={`/result?search_query=${searchQuery}`}>
+                            <button onClick={() => handleSumbit()} className='  bg-gray-300 align-baseline w-6 h-5 sm:h-6 sm:w-12 md:w-16 md:h-8 border border-gray-800 rounded-r-full'>
+                                <AiOutlineSearch className='m-auto h-4 sm:h-7 sm:w-7 ' />
+                            </button>
+                        </Link>
+
+                    </div>
+                </form>
                 {showSuggestion && (
                     <ul className='bg-white border  w-28 text-xs font-medium sm:text-base sm:w-64  md:w-96 absolute border-gray-300 sm:font-extrabold shadow-lg rounded-lg '>
                         {suggestion.map(e => <li key={e} onClick={() => handleSuggestionClick(e)} className='flex p-2 shadow-md  hover:bg-gray-100'>
